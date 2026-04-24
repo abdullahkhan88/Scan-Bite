@@ -13,6 +13,7 @@ import Orders from "../Pages/Admin/Orders.jsx";
 import Home from "../Pages/User/Home.jsx";
 import Menu from "../Pages/User/Menu.jsx";
 import Cart from "../Pages/User/Cart.jsx";
+import LoginModal from "../Pages/User/LoginModal.jsx";
 
 const router = createBrowserRouter([
   // USER ROUTES
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <Cart />,
+      },
+      {
+        path: "login",
+        element: <LoginModal />,
       },
     ],
   },

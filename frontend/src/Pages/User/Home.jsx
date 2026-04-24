@@ -6,6 +6,9 @@ import {
   ThunderboltOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
+import GreenFoods from "../../assets/GreenFoods.jpg";
+import GreenFoodsMobile from "../../assets/GreenFoods-Mobile.jpg";
+
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -17,7 +20,7 @@ const LandingPage = () => {
         <Row align="middle" gutter={[32, 32]}>
           <Col xs={24} md={12} className="flex flex-col justify-center">
 
-            <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-gray-600">
               Dining at the restaurant? Scan the QR code on your table to order instantly.
             </h1>
 
@@ -76,7 +79,7 @@ const LandingPage = () => {
               }}
             >
               <QrcodeOutlined style={{ fontSize: "30px", color: "blue" }} />
-              <h3>QR Based Ordering</h3>
+              <h3 className="text-lg font-bold text-blue-600">QR Based Ordering</h3>
               <p>Scan table QR and access menu instantly.</p>
             </Card>
           </Col>
@@ -89,7 +92,7 @@ const LandingPage = () => {
               }}
             >
               <ShoppingCartOutlined style={{ fontSize: "30px", color: "red" }} />
-              <h3>Easy Ordering</h3>
+              <h3 className="text-lg font-bold text-red-500">Easy Ordering</h3>
               <p>Add items to cart and place order in seconds.</p>
             </Card>
           </Col>
@@ -102,36 +105,43 @@ const LandingPage = () => {
               }}
             >
               <ThunderboltOutlined style={{ fontSize: "30px", color: "green" }} />
-              <h3>Fast Service</h3>
+              <h3 className="text-lg font-bold text-green-700">Fast Service</h3>
               <p>No waiting. Orders go directly to kitchen.</p>
             </Card>
           </Col>
         </Row>
 
         {/* CTA */}
-        <div className="text-center mt-16 bg-gradient-to-r from-red-50 to-pink-50 py-10 rounded-2xl">
 
-          <h2 className="text-3xl font-bold mb-3">
-            🍽️ Ready to Order?
-          </h2>
+      </div>
+      <div className="relative mb-6 sm:mb-8 md:mb-12">
+        <img
+          src={GreenFoods}
+          alt="banner"
+          className="hidden sm:block w-full h-full object-cover"
+        />
+        <div className=" mb-6">
+          <img
+            src={GreenFoodsMobile}
+            alt="banner"
+            className="block sm:hidden w-full object-cover"
+          />
+          <button className="hidden sm:block absolute bottom-[35%] left-[75%]
+           border-2 border-green-600 text-green-700 cursor-pointer px-4 md:px-6 py-2 md:py-3 rounded-md">
+            Order Now
+          </button>
 
-          <p className="text-gray-600 mb-6">
-            Explore our delicious menu and place your order in seconds.
-          </p>
-
-          <Button
-            size="large"
-            onClick={() => navigate("/menu")}
-            className="rounded-2xl px-8 py-3 text-lg font-semibold text-white border-0 shadow-lg hover:scale-105 transition"
-            style={{
-              background: "linear-gradient(135deg, #ff4d4f, #ff7a45)"
-            }}
-          >
-            Start Ordering 🍕
-          </Button>
-
+          {/* Mobile Button */}
+          <button className="block sm:hidden absolute bottom-[50%] left-[70%]
+           -translate-x-1/2 border-2 border-green-600 text-green-700 cursor-pointer text-green-700 px-2 py-1 rounded-md">
+            Order Now
+          </button>
         </div>
       </div>
+
+      {/* mobile screen */}
+
+
       <Recommended />
     </>
   );

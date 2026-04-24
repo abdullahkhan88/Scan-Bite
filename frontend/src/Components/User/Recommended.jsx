@@ -4,7 +4,7 @@ import paneerTikka from "../../assets/paneerTikka.png";
 
 const { Title, Paragraph } = Typography
 import { useState } from "react";
-
+import FoodsCard from "./FoodCard";
 /* const dammyData = [
     {
         id: 1,
@@ -52,7 +52,7 @@ const Recommended = () => {
 
     return (
         <>
-            <div className="min-h-screen bg-gradient-to-t from-[#FFEFF1] to-[#FFD6DC] p-4">
+            <div className="min-h-screen bg-gradient-to-t from-[#fff1] to-[#87ccee3d] p-4">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <Title
                         level={1}
@@ -73,59 +73,14 @@ const Recommended = () => {
                     </Paragraph>
 
                     {/* Card */}
-                    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                        <Card
-                            hoverable
-                            cover={
-                                <img
-                                    alt="food"
-                                    src={paneerTikka}
-                                    className="w-full h-60 object-cover rounded-lg"
-                                />
-                            }
-                            className="rounded-2xl overflow-hidden"
-                            style={
-                                {
-                                    background: "#41a9f81b",
-                                    border: "3px solid #41a9f885",
-                                    borderRadius: "16px"
-                                }
-                            }
-                        >
-                            {/* Tag */}
-                            <Tag color="red" style={{ marginBottom: "8px" }}>
-                                Best Seller
-                            </Tag>
+                    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <FoodsCard />
+                        <FoodsCard />
+                        <FoodsCard />
+                        <FoodsCard />
 
-                            {/* Title + Veg */}
-                            <div className="flex justify-between items-center">
-                                <h3 className="text-lg font-semibold">Paneer Tikka</h3>
-
-                                <Tag color="green">Veg</Tag>
-                            </div>
-
-                            {/* Rating */}
-                            <div>
-                                <Rate disabled defaultValue={4} style={{fontSize:"14px"}}/>
-                                <span className="text-gray-500 text-sm ml-2">(120)</span>
-                            </div>
-
-                            {/* Description */}
-                            <p className="text-gray-500 text-sm mt-1">
-                                Spicy grilled paneer with rich flavors 😋
-                            </p>
-
-                            {/* Price + Button */}
-                            <div className="flex justify-between items-center mt-4">
-                                <span className="font-bold text-lg">₹195</span>
-
-                                <Button type="primary" danger size="small">
-                                    Add
-                                </Button>
-                            </div>
-                        </Card>
-                       
                     </div>
+
                 </div>
             </div>
 
