@@ -6,9 +6,9 @@ import { cookieOptions } from "../Config/cookie.js";
 // create user controller
 export const createUser = async (req, res) => {
     try {
-        const { name, email, role, mobile, password } = req.body;
+        const { name, email, mobile, password } = req.body;
 
-        if (!name || !email || !mobile || !role || !password) {
+        if (!name || !email || !mobile  || !password) {
             return res.status(400).send({
                 success: false,
                 message: "Fields are Required"
@@ -99,7 +99,7 @@ export const loginUser = async (req, res) =>{
             message:"Internal Server Error"    
         });
     }
-}
+};
 
 
 

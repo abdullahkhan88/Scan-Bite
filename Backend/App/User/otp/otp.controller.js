@@ -72,6 +72,7 @@ export const sendEmail = async (req, res) => {
 export const verifyOTP = async (req, res) => {
     try {
         const { otp, email } = req.body;
+        console.log("REQ BODY:", req.body);
         if (!otp || !email) {
             return res.status(400).send({
                 success: false,
